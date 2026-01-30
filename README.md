@@ -1,8 +1,8 @@
-# Visualization of UniD-Shift on the SemanticKITTI Test Set
+# Visualization of UniD-Shift on SemanticKITTI and nuScenes
 
-This repository presents qualitative results of the **UniD-Shift** model on the **SemanticKITTI** test set (Sequences 11-21). These visualizations demonstrate the model's performance in 3D semantic segmentation across diverse urban and highway driving scenarios.
+This repository presents qualitative results of the **UniD-Shift** model on the **SemanticKITTI** test set (Sequences 11-21) and **nuScenes** dataset. These visualizations demonstrate the model's performance in 3D semantic segmentation across diverse urban and highway driving scenarios.
 
-## 🎥 Test Set Visualizations
+## 🎥 SemanticKITTI Test Set Visualizations
 
 The animations below showcase the segmentation inference results. 
 **Viewpoint:** Ego-centric 3D point cloud view (First-person perspective from the vehicle).
@@ -30,12 +30,42 @@ The animations below showcase the segmentation inference results.
 
 <br>
 
+## 🎥 nuScenes Visualizations
+
+The animations below showcase the segmentation inference results on the nuScenes dataset.
+**Viewpoint:** Ego-centric 3D point cloud view (First-person perspective from the vehicle).
+**Color Legend:** Standard nuScenes color palette.
+
+<div align="center">
+
+| Scene 0088 | Scene 0485 | Scene 0487 |
+| :---: | :---: | :---: |
+| <img src="./vis_gifs/scene-0088.gif" width="100%" alt="Scene 0088"> | <img src="./vis_gifs/scene-0485.gif" width="100%" alt="Scene 0485"> | <img src="./vis_gifs/scene-0487.gif" width="100%" alt="Scene 0487"> |
+
+| Scene 0489 | Scene 0496 | Scene 0549 |
+| :---: | :---: | :---: |
+| <img src="./vis_gifs/scene-0489.gif" width="100%" alt="Scene 0489"> | <img src="./vis_gifs/scene-0496.gif" width="100%" alt="Scene 0496"> | <img src="./vis_gifs/scene-0549.gif" width="100%" alt="Scene 0549"> |
+
+| Scene 0551 | Scene 0601 | Scene 0612 |
+| :---: | :---: | :---: |
+| <img src="./vis_gifs/scene-0551.gif" width="100%" alt="Scene 0551"> | <img src="./vis_gifs/scene-0601.gif" width="100%" alt="Scene 0601"> | <img src="./vis_gifs/scene-0612.gif" width="100%" alt="Scene 0612"> |
+
+| Scene 0621 | Scene 0829 | Scene 0830 |
+| :---: | :---: | :---: |
+| <img src="./vis_gifs/scene-0621.gif" width="100%" alt="Scene 0621"> | <img src="./vis_gifs/scene-0829.gif" width="100%" alt="Scene 0829"> | <img src="./vis_gifs/scene-0830.gif" width="100%" alt="Scene 0830"> |
+
+</div>
+
+<br>
+
 ## 📊 Dataset & Method Details
 
 - **Method**: UniD-Shift
-- **Dataset**: [SemanticKITTI](http://www.semantic-kitti.org/) (Test Sequences 11-21)
+- **Datasets**: 
+  - [SemanticKITTI](http://www.semantic-kitti.org/) (Test Sequences 11-21)
+  - [nuScenes](https://www.nuscenes.org/) (12 selected scenes)
 - **Data Modality**: LiDAR Point Cloud
-- **Total Frames**: 20,351 frames
+- **SemanticKITTI Total Frames**: 20,351 frames
 - **Visualization FPS**: 15 FPS
 
 ## 🎨 Semantic Classes
@@ -54,4 +84,6 @@ The visualizations strictly follow the SemanticKITTI 19-class definition:
 
 ## 📄 License
 
-These visualizations are based on the SemanticKITTI dataset. Please refer to the [original dataset license](http://www.semantic-kitti.org/) for usage terms.
+These visualizations are based on the SemanticKITTI and nuScenes datasets. Please refer to the original dataset licenses for usage terms:
+- [SemanticKITTI License](http://www.semantic-kitti.org/)
+- [nuScenes License](https://www.nuscenes.org/terms-of-use)
