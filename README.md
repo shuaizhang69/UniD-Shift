@@ -2,7 +2,7 @@
 
 This repository presents qualitative results of the **UniD-Shift** model on the **SemanticKITTI** test set (Sequences 11-21) and **nuScenes** dataset. These visualizations demonstrate the model's performance in 3D semantic segmentation across diverse urban and highway driving scenarios.
 
-## 🎥 SemanticKITTI Test Set Visualizations
+## 磁 SemanticKITTI Test Set Visualizations
 
 The animations below showcase the segmentation inference results. 
 **Viewpoint:** Ego-centric 3D point cloud view (First-person perspective from the vehicle).
@@ -30,10 +30,12 @@ The animations below showcase the segmentation inference results.
 
 <br>
 
-## 🎥 nuScenes Visualizations
+## 磁 nuScenes Visualizations
 
-The animations below showcase the segmentation inference results on the nuScenes dataset.
-**Viewpoint:** Ego-centric 3D point cloud view (First-person perspective from the vehicle).
+The animations below showcase the segmentation inference results on the nuScenes dataset. 
+Unlike standard evaluation which typically focuses on annotated keyframes (2Hz), these visualizations are generated from **12 selected scenes** comprising both **Test Set keyframes and their corresponding intermediate "dropped" frames (sweeps)**. This dense inference (20Hz) demonstrates the model's stability and temporal consistency.
+
+**Viewpoint:** Ego-centric 3D point cloud view.
 **Color Legend:** Standard nuScenes color palette.
 
 <div align="center">
@@ -58,31 +60,45 @@ The animations below showcase the segmentation inference results on the nuScenes
 
 <br>
 
-## 📊 Dataset & Method Details
+## 投 Dataset & Method Details
 
 - **Method**: UniD-Shift
 - **Datasets**: 
   - [SemanticKITTI](http://www.semantic-kitti.org/) (Test Sequences 11-21)
-  - [nuScenes](https://www.nuscenes.org/) (12 selected scenes)
-- **Data Modality**: LiDAR Point Cloud
-- **SemanticKITTI Total Frames**: 20,351 frames
+  - [nuScenes](https://www.nuscenes.org/) (12 selected scenes, full sweep reconstruction)
+- **Data Modality**: 
+  - SemanticKITTI: 64-beam LiDAR
+  - nuScenes: 32-beam LiDAR
+- **Inference Scope**:
+  - **SemanticKITTI**: Standard test set sequences.
+  - **nuScenes**: Dense inference including non-annotated sweeps (approx. 20Hz) to visualize continuous motion, derived from the Test Set split.
 - **Visualization FPS**: 15 FPS
 
-## 🎨 Semantic Classes
+## 耳 Semantic Classes
 
-The visualizations strictly follow the SemanticKITTI 19-class definition:
+### SemanticKITTI (19 Classes)
 
 | Category | Classes |
 | :--- | :--- |
 | **Dynamic Objects** | Car, Bicycle, Motorcycle, Truck, Other-vehicle, Person, Bicyclist, Motorcyclist |
 | **Static Structures** | Road, Parking, Sidewalk, Other-ground, Building, Fence, Vegetation, Trunk, Terrain, Pole, Traffic-sign |
 
-## 📝 Notes
+### nuScenes (16 Classes)
+
+The nuScenes visualizations follow the official **LiDARSeg** 16-class definition:
+
+| Category | Classes |
+| :--- | :--- |
+| **Dynamic Objects** | Car, Truck, Bus, Trailer, Construction-vehicle, Pedestrian, Motorcycle, Bicycle, Barrier, Traffic-cone |
+| **Static Structures** | Driveable-surface, Sidewalk, Terrain, Manmade, Vegetation, Other-flat |
+
+## 統 Notes
 
 1.  **Sequence 19 Split**: Due to the sequence length (4,981 frames), Sequence 19 is visualized in two parts for better loading performance.
-2.  **Resolution**: Visualizations are rendered at optimized resolution to balance visual fidelity and file size for web viewing.
+2.  **nuScenes Density**: Visualizations use image dilation techniques to enhance the visibility of the sparse 32-beam LiDAR points for better qualitative analysis.
+3.  **Resolution**: Visualizations are rendered at optimized resolution to balance visual fidelity and file size for web viewing.
 
-## 📄 License
+## 塘 License
 
 These visualizations are based on the SemanticKITTI and nuScenes datasets. Please refer to the original dataset licenses for usage terms:
 - [SemanticKITTI License](http://www.semantic-kitti.org/)
