@@ -1,45 +1,57 @@
 # Visualization of UniD-Shift on the SemanticKITTI Test Set
 
-This repository contains visualizations of the UniD-Shift model predictions on the SemanticKITTI test set (sequences 11-21). The visualizations demonstrate the semantic segmentation performance across different driving scenarios captured in various urban and highway environments.
+This repository presents qualitative results of the **UniD-Shift** model on the **SemanticKITTI** test set (Sequences 11-21). These visualizations demonstrate the model's performance in 3D semantic segmentation across diverse urban and highway driving scenarios.
 
-## Test Set Visualizations
+## 🎥 Test Set Visualizations
 
-The following animations showcase the model's predictions on all test sequences. Each GIF displays the point cloud semantic segmentation results in a bird's-eye view, with colors representing different semantic classes according to the SemanticKITTI standard color scheme.
+The animations below showcase the segmentation inference results. 
+**Viewpoint:** Ego-centric 3D point cloud view (First-person perspective from the vehicle).
+**Color Legend:** Standard SemanticKITTI color palette.
 
 <div align="center">
 
-| Sequence 11 | Sequence 12 | Sequence 13 | Sequence 14 |
-|:-----------:|:-----------:|:-----------:|:-----------:|
-| <img src="./vis_gifs/seq_11.gif" width="240" height="180" alt="Sequence 11"/> | <img src="./vis_gifs/seq_12.gif" width="240" height="180" alt="Sequence 12"/> | <img src="./vis_gifs/seq_13.gif" width="240" height="180" alt="Sequence 13"/> | <img src="./vis_gifs/seq_14.gif" width="240" height="180" alt="Sequence 14"/> |
-| **Sequence 15** | **Sequence 16** | **Sequence 17** | **Sequence 18** |
-| <img src="./vis_gifs/seq_15.gif" width="240" height="180" alt="Sequence 15"/> | <img src="./vis_gifs/seq_16.gif" width="240" height="180" alt="Sequence 16"/> | <img src="./vis_gifs/seq_17.gif" width="240" height="180" alt="Sequence 17"/> | <img src="./vis_gifs/seq_18.gif" width="240" height="180" alt="Sequence 18"/> |
-| **Sequence 19 (Part 1)** | **Sequence 19 (Part 2)** | **Sequence 20** | **Sequence 21** |
-| <img src="./vis_gifs/seq_19_part1.gif" width="240" height="180" alt="Sequence 19 Part 1"/> | <img src="./vis_gifs/seq_19_part2.gif" width="240" height="180" alt="Sequence 19 Part 2"/> | <img src="./vis_gifs/seq_20.gif" width="240" height="180" alt="Sequence 20"/> | <img src="./vis_gifs/seq_21.gif" width="240" height="180" alt="Sequence 21"/> |
+| Sequence 11 | Sequence 12 | Sequence 13 |
+| :---: | :---: | :---: |
+| <img src="./vis_gifs/seq_11.gif" width="290" alt="Seq 11"> | <img src="./vis_gifs/seq_12.gif" width="290" alt="Seq 12"> | <img src="./vis_gifs/seq_13.gif" width="290" alt="Seq 13"> |
+
+| Sequence 14 | Sequence 15 | Sequence 16 |
+| :---: | :---: | :---: |
+| <img src="./vis_gifs/seq_14.gif" width="290" alt="Seq 14"> | <img src="./vis_gifs/seq_15.gif" width="290" alt="Seq 15"> | <img src="./vis_gifs/seq_16.gif" width="290" alt="Seq 16"> |
+
+| Sequence 17 | Sequence 18 | Sequence 19 (Part 1) |
+| :---: | :---: | :---: |
+| <img src="./vis_gifs/seq_17.gif" width="290" alt="Seq 17"> | <img src="./vis_gifs/seq_18.gif" width="290" alt="Seq 18"> | <img src="./vis_gifs/seq_19_part1.gif" width="290" alt="Seq 19 p1"> |
+
+| Sequence 19 (Part 2) | Sequence 20 | Sequence 21 |
+| :---: | :---: | :---: |
+| <img src="./vis_gifs/seq_19_part2.gif" width="290" alt="Seq 19 p2"> | <img src="./vis_gifs/seq_20.gif" width="290" alt="Seq 20"> | <img src="./vis_gifs/seq_21.gif" width="290" alt="Seq 21"> |
 
 </div>
 
-## Dataset Information
+<br>
 
-- **Dataset**: [SemanticKITTI](http://www.semantic-kitti.org/)
-- **Test Sequences**: 11-21 (11 sequences, 20,351 frames total)
-- **Visualization Format**: Bird's-eye view point cloud with semantic labels
-- **Color Scheme**: Standard SemanticKITTI color mapping
-- **Frame Rate**: 15 FPS
+## 📊 Dataset & Method Details
 
-## Semantic Classes
+- **Method**: UniD-Shift
+- **Dataset**: [SemanticKITTI](http://www.semantic-kitti.org/) (Test Sequences 11-21)
+- **Data Modality**: LiDAR Point Cloud
+- **Total Frames**: 20,351 frames
+- **Visualization FPS**: 15 FPS
 
-The visualizations use the standard SemanticKITTI 19-class semantic segmentation labels:
+## 🎨 Semantic Classes
 
-- **Dynamic Objects**: car, bicycle, motorcycle, truck, other-vehicle, person, bicyclist, motorcyclist
-- **Static Structures**: road, parking, sidewalk, other-ground, building, fence, vegetation, trunk, terrain, pole, traffic-sign
+The visualizations strictly follow the SemanticKITTI 19-class definition:
 
-## Notes
+| Category | Classes |
+| :--- | :--- |
+| **Dynamic Objects** | Car, Bicycle, Motorcycle, Truck, Other-vehicle, Person, Bicyclist, Motorcyclist |
+| **Static Structures** | Road, Parking, Sidewalk, Other-ground, Building, Fence, Vegetation, Trunk, Terrain, Pole, Traffic-sign |
 
-- Sequence 19 is split into two parts due to its large number of frames (4,981 frames)
-- All visualizations are rendered at 50% resolution for optimal file size and loading speed
-- The bird's-eye view perspective provides a comprehensive overview of the semantic segmentation results
+## 📝 Notes
 
+1.  **Sequence 19 Split**: Due to the sequence length (4,981 frames), Sequence 19 is visualized in two parts for better loading performance.
+2.  **Resolution**: Visualizations are rendered at optimized resolution to balance visual fidelity and file size for web viewing.
 
-## License
+## 📄 License
 
-This visualization follows the SemanticKITTI dataset license. Please refer to the original [dataset license](http://www.semantic-kitti.org/) for usage terms.
+These visualizations are based on the SemanticKITTI dataset. Please refer to the [original dataset license](http://www.semantic-kitti.org/) for usage terms.
